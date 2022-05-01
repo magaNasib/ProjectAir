@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="css/style.css" />
+  <script src="https://kit.fontawesome.com/fa420b4f82.js" crossorigin="anonymous"></script>
+  <title>Document</title>
+</head>
+
+<body>
+  <header class="toursHeader">
+    <div class="container h-100">
+      <nav class="row justifyBetween">
+        <div class="logo">
+          <a href="#"> HackTravel </a>
+        </div>
+        <div class="navbar row right">
+          <ul class="">
+            <li>
+              <a href="#">Home</a>
+              <a href="#">Tours</a>
+              <a href="#">About</a>
+              <a href="#">Gallery</a>
+              <a href="#">Contacts</a>
+            </li>
+          </ul>
+          <a href="#"><i class="fa-solid fa-user"></i>
+            Profile
+          </a>
+        </div>
+      </nav>
+    </div>
+  </header>
+  <main>
+    <div class="tour-banner">
+      <h1>All Tours For You</h1>
+      <p>650 tours found</p>
+    </div>
+    <section class="tour-main">
+      <div class="container row">
+        <div class="leftSide">
+          <form action="#" class="tour-form">
+            <div class="">
+              <h4>Search</h4>
+              <input type="text" name="" placeholder="from" id="dF" class="dF" />
+              <input type="text" name="" id="dT" placeholder="to" />
+              <input type="text" name="" id="flightPrice" placeholder="price" />
+              <input type="date" name="" id="flightTime" />
+              <select name="" id="flightWay">
+                <option value="One way">One Way</option>
+                <option value="Two way">Two Way</option>
+              </select>
+              <hr />
+              <div class="priceRange">
+                <h4>PRICE RANGE</h4>
+                <input type="range" min="0" max="4000" />
+                <div class="row justifyBetween rangeInfo">
+                  <span>$0</span>
+                  <span>$400</span>
+                </div>
+              </div>
+              <input type="button" class="searchBtn" name="" value="Search" id="searchBtn" />
+            </div>
+          </form>
+        </div>
+        <div class="rightSide">
+          <div class="row justifyBetween rowDiv">
+            <div class="">
+              <label for="sort">Sort by:</label>
+              <select name="" id="">
+                <option value="Popularity">Popularity</option>
+                <option value="Newest">Newest</option>
+              </select>
+            </div>  
+            <div>
+              <label> View:</label>
+              <a>
+                <i class="fa-solid fa-list"></i>
+              </a>
+              <a><i class="fa-solid fa-table-cells"></i></a>
+            </div>
+          </div>
+          <div class="row cards" id="cards">
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <script src="/js/main.js"></script>
+</body>
+
+</html>
