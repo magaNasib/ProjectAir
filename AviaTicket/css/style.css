@@ -12,6 +12,7 @@ html {
 .container {
   width: 90%;
   margin: 0 auto;
+  position: relative;
 }
 a {
   text-decoration: none;
@@ -102,8 +103,9 @@ header.header {
 }
 .cards {
   padding: 1rem;
-  justify-content: space-between;
   flex-wrap: wrap;
+  flex: 1;
+  gap: 1rem;
 }
 .card img {
   border-top-left-radius: 5px;
@@ -116,7 +118,10 @@ header.header {
   margin-top: 1rem;
   border: 1px solid lightgray;
   box-shadow: 0px 0px 5px lightgray;
-  width: 30%;
+  width: 16rem;
+}
+.offers .card {
+  width: 17.5rem;
 }
 
 .cards .card .content {
@@ -177,6 +182,7 @@ header.toursHeader {
 .tour-main {
   padding: 2rem 0;
   background-color: #f5f5f5;
+  position: relative;
 }
 .leftSide h4 {
   font-size: 1.5rem;
@@ -196,6 +202,13 @@ header.toursHeader {
 .tour-main .rightSide {
   width: 75%;
   padding: 2rem 0;
+}
+
+.show {
+  display: flex !important;
+}
+.logo .menu {
+  display: none;
 }
 .rightSide .content h5 {
   font-size: 1rem;
@@ -235,4 +248,142 @@ input.searchBtn {
 }
 .rowDiv a {
   margin: 0 0.5rem;
+}
+.alignCenter {
+  align-items: center;
+}
+.choices {
+  width: 100%;
+
+  padding: 0.6rem;
+  background-color: #f5f5f5;
+  margin: 0.5rem 0;
+  font-size: 1rem;
+  border-radius: 1rem;
+}
+.input-choice {
+  cursor: pointer;
+}
+.input-choice .mode {
+  color: rgb(90, 90, 90);
+}
+.choices .choice-label label {
+  margin: 0.4rem;
+  font-style: italic;
+  color: rgb(97, 97, 97);
+  font-size: 0.9rem;
+}
+
+.checkDiv {
+  display: flex;
+  align-items: center;
+}
+.checkDiv input {
+  width: 20% !important;
+}
+.hidden {
+  display: none;
+}
+.show {
+  display: block !important;
+}
+.open-choice span {
+  cursor: pointer;
+  background-color: white;
+  font-size: 1.5rem;
+  width: 2rem;
+  text-align: center;
+  line-height: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+}
+/* Chrome, Safari, Edge, Opera */
+.open-choice input::-webkit-outer-spin-button,
+.open-choice input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.open-choice .number {
+  margin: 1rem;
+  font-size: 0.9rem;
+}
+.open-choice .number label {
+  color: rgb(90, 90, 90);
+}
+/* Firefox */
+.open-choice input[type="number"] {
+  -moz-appearance: textfield;
+  width: 50%;
+  text-align: center;
+}
+
+.popup-info {
+  width: 27rem;
+  min-height: 92vh;
+  background-color: white;
+  box-shadow: 0px 0px 10px black;
+  position: fixed;
+  top: 40%;
+  left: 50%;
+  z-index: 5;
+  transform: translate(-50%, -40%);
+}
+.popup-info .parent {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+.close {
+  position: absolute;
+  top: -1rem;
+  right: -1rem;
+  font-size: 2rem;
+  width: 3rem;
+  cursor: pointer;
+  height: 3rem;
+  background-color: rgb(113, 113, 113);
+  color: white;
+  text-align: center;
+  line-height: 3rem;
+  border-radius: 50%;
+}
+.popup-info .img {
+  width: 100%;
+  height: 12rem;
+}
+.popup-info img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.fromTo {
+  font-size: 1.5rem;
+  text-align: center;
+  padding: 1rem 0;
+  color: var(--orange);
+}
+.content .info .row {
+  padding: 0.2rem 1rem;
+}
+.content strong {
+  margin-right: 0.5rem;
+}
+.popup-counters .price {
+  font-size: 0.8rem;
+  color: var(--orange);
+}
+.chkout {
+  text-align: right;
+}
+.chkout a {
+  display: inline-block;
+  background-color: var(--orange);
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 10px;
+  margin-right: 1rem;
+  margin-top: 1rem;
+}
+.class-active{
+  display: flex;
 }
