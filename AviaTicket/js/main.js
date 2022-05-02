@@ -101,21 +101,21 @@ function addToLocal(data) {
 function addEvents() {
     document.body.addEventListener("click", (e) => checkElement(e.target));
 
-    
-    
+
+
     close_btn.addEventListener('click', () => closePopUp());
     const baby = document.getElementById("baby");
     const children = document.getElementById("children");
     const adult = document.getElementById("adult");
     const destFrom = document.getElementById("dF");
     const destTo = document.getElementById("dT");
-    
-    destFrom.addEventListener('keyup',()=> getDropdown(destFrom.value));
-    destTo.addEventListener('keyup',()=> getDropdown(destTo.value));
-
 
     baby.addEventListener('input', () => {
-        calculate(baby.value, children.value, adult.value, locations[popup.getAttribute("name") - 1]);
+        const xhr = new XMLHttpRequest();
+
+        xhr.open();
+        xhr.send("GET", "http://ramin000-001-site1.dtempurl.com/api/User/getbyid/" + popup.getAttribute("name") - 1);
+        xhr.onload = () => xhr.status == 200 ? calculate(baby.value, children.value, adult.value, JSON.parse(xhr.responseText())) : "";
         baby.value = checkInputMin(baby.value, maxValue);
     });
     children.addEventListener('input', () => {
@@ -143,49 +143,57 @@ function checkElement(target) {
 //Update PopUp
 function updatePopUp(id) {
     resetPopUp();
-    const data = locations[id - 1];
-    popup.setAttribute("name", id);
-    //Prices and about Flight
-    const adultPrice = document.getElementById("adultprice");
+
+    const xhr = new XMLHttpRequest();
+
+    console.log(id);
+    xhr.open("GET", "http://ramin000-001-site1.dtempurl.com/api/User/getbyid/" + id);
+    xhr.onload = () => {
+        if (xhr.status == 200) {
+            const data = JSON.parse(xhr.responseText);
+            console.log(data);
+            popup.setAttribute("name", id);
+            //Prices and about Flight
+            const adultPrice = document.getElementById("adultprice");
+            
+            maxValue = data.ticketAmount;
+
+            const childPrice = document.getElementById("childprice");
+            const babyPrice = document.getElementById("babyprice");
+            const flightTime = document.getElementById("flighttime2");
+            const freeBag = document.getElementById("freebag");
+            const handBag = document.getElementById("handbag");
+
+            //Default Value
+            const totalPrice = document.getElementById("totalprice");
+            totalPrice.textContent = "0 AZN";
+
+            //Image
+            const bckg = document.getElementById("bckgpopup");
+            bckg.src = data.imageUrl;
+
+            //Amount To and From    
+            const destTo = document.getElementById("destTo");
+            const destFrom = document.getElementById("destFrom");
+
+            //Prices
+            adultPrice.textContent = data.ticketPriceForAdult + " AZN";
+            childPrice.textContent = data.ticketPriceForChildren + " AZN";
+            babyPrice.textContent = data.ticketPriceForBaby + " AZN";
+            destTo.textContent = data.to;
+            destFrom.textContent = data.from;
 
 
-    const adult = document.getElementById("adult");
-    const baby = document.getElementById("baby");
-    const children = document.getElementById("children");
+            //Time
+            flightTime.textContent = data.flightTime.slice(0, 4) + '-' + data.flightTime.slice(5, 7) + '-' + data.flightTime.slice(8, 10);
+            //Bag
+            freeBag.textContent = data.flightInformation.freeBaggage;
+            handBag.textContent = data.flightInformation.handBag;
 
-    maxValue = data.ticketAmount;
+        }
+    }
+    xhr.send();
 
-    const childPrice = document.getElementById("childprice");
-    const babyPrice = document.getElementById("babyprice");
-    const flightTime = document.getElementById("flighttime2");
-    const freeBag = document.getElementById("freebag");
-    const handBag = document.getElementById("handbag");
-
-    //Default Value
-    const totalPrice = document.getElementById("totalprice");
-    totalPrice.textContent = "0 AZN";
-
-    //Image
-    const bckg = document.getElementById("bckgpopup");
-    bckg.src = data.imageUrl;
-
-    //Amount To and From    
-    const destTo = document.getElementById("destTo");
-    const destFrom = document.getElementById("destFrom");
-
-    //Prices
-    adultPrice.textContent = data.ticketPriceForAdult + " AZN";
-    childPrice.textContent = data.ticketPriceForChildren + " AZN";
-    babyPrice.textContent = data.ticketPriceForBaby + " AZN";
-    destTo.textContent = data.to;
-    destFrom.textContent = data.from;
-
-
-    //Time
-    flightTime.textContent = data.flightTime.slice(0, 4) + '-' + data.flightTime.slice(5, 7) + '-' + data.flightTime.slice(8, 10);
-    //Bag
-    freeBag.textContent = data.flightInformation.freeBaggage;
-    handBag.textContent = data.flightInformation.handBag;
 }
 
 //Calculate
@@ -243,20 +251,6 @@ function checkInputMin(value, max) {
 }
 
 //Dropdown
-function getDropdown(par) {
-    if(par == "")
-        return;
-        
-    dropdownList = [];
-    for (let i = 0; i < locations.length; ++i) {
-        console.log(locations[i].from.indexOf(par));
-        if(locations[i].from.indexOf(par) > 0){
-            console.log(locations[i].from);
-            dropdownList.push(locations[i].from);
-        }
-    }
-    console.log(dropdownList);
-}
 
 
 

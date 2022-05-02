@@ -38,7 +38,7 @@
     <main>
       <div class="popup-info more" id="popup" style="display: none">
         <div class="parent">
-          <a id="clsBtn" class="close"><i class="fa-solid fa-xmark"></i> </a>
+          <a id="clsBtn1" class="close"><i class="fa-solid fa-xmark"></i> </a>
           <div class="img">
             <img src="images/box-offer-02-370x310.jpg" alt="" />
           </div>
@@ -72,9 +72,9 @@
           </div>
         </div>
       </div>
-      <div class="popup-info addPopup" id="popup" style="display: none">
+      <div class="popup-info addPopup" id="popup-add" style="display: none">
         <div class="parent">
-          <a id="clsBtn" class="close"><i class="fa-solid fa-xmark"></i> </a>
+          <button id="clsbtn2" class="close"><i class="fa-solid fa-xmark"></i> </button>
 
           <div class="content">
             <div class="info">
@@ -91,11 +91,11 @@
               </div>
 
               <div class="row">
-                <input type="url" name="" placeholder="Image url" id="" />
+                <input type="url" name="" placeholder="Image url" id="imageurl" />
               </div>
 
               <div class="row">
-                <input type="text" name="" placeholder="Free Baggage" id="" />
+                <input type="text" name="" placeholder="Free Baggage" id="freebaggage" />
               </div>
               <div class="row">
                 <input
@@ -114,34 +114,33 @@
                   type="text"
                   name=""
                   placeholder="Discount with the %"
-                  id=""
+                  id="discount"
                 />
               </div>
               <div class="row">
-                <input type="number" placeholder="Price for Adults" />
+                <input id="priceforadult" type="number" placeholder="Price for Adults" />
               </div>
               <div class="row">
-                <input type="number" placeholder="Price for Children" />
+                <input  id="priceforchildren" type="number" placeholder="Price for Children" />
               </div>
               <div class="row">
-                <input type="number" placeholder="Price for Babies" />
+                <input id="priceforbaby" type="number" placeholder="Price for Babies" />
               </div>
               <div class="row">
-                <input type="radio" name="meal" id="meal" />
-                <label for="">Meal</label>
-
-                <input type="radio" name="meal" id="notmeal" />
-                <label for="notmeal">Not meal</label>
+                <select id="meal" >
+                  <option value="meal">Meal</option>
+                  <option value="not meal">Not Meal</option>
+                </select>
               </div>
               <div class="chkout">
-                <a href="#" id="add">Add</a>
+                <a href="#" id="uploadtodata">Add</a>
               </div>
             </div>
           </div>
         </div>
       </div>
       <div class="container">
-        <a href="#" class="addTicket"
+        <a href="#" id="addBtn" class="addTicket"
           ><i class="fa-solid fa-plus"></i> Add ticket</a
         >
       </div>
@@ -155,18 +154,8 @@
             <th></th>
           </tr>
         </thead>
-        <tbody>
-          <tr>
-            <td data-column="from">Baku</td>
-            <td data-column="to">Ganja</td>
-            <td data-column="amount">10</td>
-            <td data-column="time">2022.10.25</td>
-            <td class="actions" style="display: flex;">
-              <a href="#">More...</a>
-              <a href="#">Uptade</a>
-              <a href="#"><i class="fa-solid fa-trash-can"></i></a>
-            </td>
-          </tr>
+        <tbody id="tbodycls">
+
         </tbody>
       </table>
     </main>
