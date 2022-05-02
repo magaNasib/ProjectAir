@@ -1,0 +1,52 @@
+@media screen and (max-width: 768px) {
+  html {
+    font-size: 15px;
+  }
+  .navbar.right {
+    display: none;
+    width: 100%;
+    justify-content: center;
+  }
+  .logo {
+    width: 100%;
+  }
+  .logo .menu {
+    display: block;
+  }
+  .container {
+    width: 96%;
+  }
+  .mobile-col {
+    flex-direction: column;
+  }
+  .tour-main {
+    padding: 1rem 0;
+  }
+  .tour-banner {
+    font-size: 1.1rem;
+  }
+  .tour-main .leftSide {
+    width: 100%;
+    margin: 0 auto;
+  }
+  .tour-form h4 {
+    margin: 1rem 0;
+  }
+  .tour-main .rightSide {
+    width: 100%;
+    margin: 0 auto;
+  }
+  .rightSide .card {
+    width: 48%;
+  }
+  .tour-form input,
+  .tour-form select {
+    width: 49%;
+  }
+  .tour-form .priceRange input {
+    width: 100% !important;
+  }
+  .tour-form #searchBtn {
+    display: block;
+  }
+}

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/responsive.css" />
+    <link rel="stylesheet" href="css/admin.css" />
+    <script
+      src="https://kit.fontawesome.com/fa420b4f82.js"
+      crossorigin="anonymous"
+    ></script>
+    <title>Document</title>
+  </head>
+  <body style="background-color: black">
+    <header
+      class="toursHeader"
+      style="color: white; position: relative; z-index: 55; box-shadow: none"
+    >
+      <div class="container h-100">
+        <nav class="row justifyBetween mobile-col">
+          <div class="logo row justifyBetween">
+            <a href="#"> HackTravel </a>
+            <a href="#" class="menu" id="menu"
+              ><i class="fa-solid fa-bars"></i>
+            </a>
+          </div>
+          <div class="navbar row right" id="toggleMenu">
+            <a href="#"
+              ><i class="fa-solid fa-user"></i>
+              Profile
+            </a>
+          </div>
+        </nav>
+      </div>
+    </header>
+    <main>
+      <div class="background">
+        <div class="shape"></div>
+        <div class="shape"></div>
+      </div>
+      <form>
+        <h3>Admin Login</h3>
+
+        <label for="username">Username</label>
+        <input type="text" placeholder="Email or Phone" id="username" />
+
+        <label for="password">Password</label>
+        <input type="password" placeholder="Password" id="password" />
+
+        <button><a href="dashboard.html">Log In</a></button>
+      </form>
+    </main>
+  </body>
+</html>

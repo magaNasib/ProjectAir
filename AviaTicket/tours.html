@@ -1,338 +1,195 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="css/style.css" />
-    <link rel="stylesheet" href="css/responsive.css" />
-    <script
-      src="https://kit.fontawesome.com/fa420b4f82.js"
-      crossorigin="anonymous"
-    ></script>
-    <title>Document</title>
-  </head>
-  <body>
-    <header class="toursHeader">
-      <div class="container h-100">
-        <nav class="row justifyBetween mobile-col">
-          <div class="logo row justifyBetween">
-            <a href="#"> HackTravel </a>
-            <a href="#" class="menu" id="menu"
-              ><i class="fa-solid fa-bars"></i>
-            </a>
-          </div>
-          <div class="navbar row right" id="toggleMenu">
-            <ul class="">
-              <li>
-                <a href="#">Home</a>
-                <a href="#">Tours</a>
-                <a href="#">About</a>
-                <a href="#">Gallery</a>
-                <a href="#">Contacts</a>
-              </li>
-            </ul>
-            <a href="#"
-              ><i class="fa-solid fa-user"></i>
-              Profile
-            </a>
-          </div>
-        </nav>
-      </div>
-    </header>
-    <div class="popup-info" id="popup" style="display: none;">
-          <div class="parent">
-            <a id="clsBtn" class="close"><i class="fa-solid fa-xmark"></i> </a>
-            <div class="img">
-              <img src="images/box-offer-02-370x310.jpg" alt="" />
-            </div>
-            <div class="content">
-              <div class="fromTo">
-                <span id = "destFrom">Baku</span>
-                <i class="fa-solid fa-arrow-right-long"></i>
-                <span id = "destTo">Ganja</span>
-              </div>
-              <div class="info">
-                <div class="row">
-                  <strong>Price: </strong>
-                  <p>$2000</p>
-                </div>
-                <div class="row">
-                  <strong>Ticket Amount: </strong>
-                  <p>5</p>
-                </div>
-                <div class="row">
-                  <strong>Flight Time: </strong>
-                  <p id="flightTime2">2020:42:25</p>
-                </div>
-                <div class="row">
-                  <strong>Free Baggage: </strong>
-                  <p id="freeBag">25kg</p>
-                </div>
-                <div class="row">
-                  <strong>Handbag:</strong>
-                  <p id="handbag">1 piece (10kg)</p>
-                </div>
-                <div class="row open-choice popup-counters">
-                  <div class="number text-center">
-                    <div>
-                      <label for="adult">Adult</label>
-                      <span id="adultprice" class="price">($500)</span>
-                    </div>
 
-                    <div class="row justifyBetween alignCenter">
-                      <span class="minus">-</span>
-                      <input type="number" id="adult" value="0" min="0" />
-                      <span class="plus">+</span>
-                    </div>
-                  </div>
-                  <div class="number text-center">
-                    <div>
-                      <label for="children">Children</label>
-                      <span id="childprice" class="price">($500)</span>
-                    </div>
-                    <div class="row justifyBetween alignCenter">
-                      <span class="minus">-</span>
-                      <input type="number" id="children" value="0" min="0" />
-                      <span class="plus">+</span>
-                    </div>
-                  </div>
-                  <div class="number text-center">
-                    <div>
-                      <label for="baby">Baby </label>
-                      <span id="babyprice" class="price">($500)</span>
-                    </div>
-                    <div class="row justifyBetween alignCenter">
-                      <span class="minus">-</span>
-                      <input type="number" id="baby" value="1" min="0" />
-                      <span class="plus">+</span>
-                    </div>
-                  </div>
-                </div>
-                <div class="row">
-                  <strong class="total">Total: </strong>
-                  <p id="totalPrice">$1055</p>
-                </div>
-                <div class="chkout">
-                  <a href="#" id="chkout">Checkout</a>
-                </div>
-              </div>
-            </div>
-          </div>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+  <script src="https://kit.fontawesome.com/fa420b4f82.js" crossorigin="anonymous"></script>
+  <title>Document</title>
+</head>
+
+<body>
+  <header class="toursHeader">
+    <div class="container h-100">
+      <nav class="row justifyBetween mobile-col">
+        <div class="logo row justifyBetween">
+          <a href="#"> HackTravel </a>
+          <a href="#" class="menu" id="menu"><i class="fa-solid fa-bars"></i>
+          </a>
         </div>
-    <main>
-      <div class="tour-banner">
-        <h1>All Tours For You</h1>
-        <p>650 tours found</p>
+        <div class="navbar row right" id="toggleMenu">
+          <ul class="">
+            <li>
+              <a href="/index.html">Home</a>
+              <a href="#">Tours</a>
+              <a href="#">About</a>
+              <a href="#">Gallery</a>
+              <a href="#">Contacts</a>
+            </li>
+          </ul>
+          <a href="#"><i class="fa-solid fa-user"></i>
+            Profile
+          </a>
+        </div>
+      </nav>
+    </div>
+  </header>
+  <div class="popup-info" id="popup" style="display: none">
+    <div class="parent">
+      <a id="close-btn" class="close"><i class="fa-solid fa-xmark"></i></a>
+      <div class="img">
+        <img id="bckgpopup" src="images/box-offer-02-370x310.jpg" alt="" />
       </div>
-      <section class="tour-main">
-        <div class="container row mobile-col" id="tourDiv">
-          <div class="leftSide">
-            <form action="#" class="tour-form">
-              <div class="">
-                <h4>Search</h4>
-                <input
-                  type="text"
-                  name=""
-                  placeholder="from"
-                  id="dF"
-                  class="dF"
-                />
-                <input type="text" name="" id="dT" placeholder="to" />
-                <input
-                  type="text"
-                  name=""
-                  id="flightPrice"
-                  placeholder="price"
-                />
-                <input type="datetime-local" id="flightTime" name="book" />
-                <select name="" id="flightWay">
-                  <option value="One way">One Way</option>
-                  <option value="Two way">Two Way</option>
-                </select>
-                <div class="choices">
-                  <div
-                    class="row input-choice justifyBetween alignCenter"
-                    id="inputChoice"
-                  >
-                    <div class="">
-                      <p>1 sernishin</p>
-                      <span class="mode">ekonom</span>
-                    </div>
-                    <div class="icon-drop">
-                      <i class="fa-solid fa-caret-down"></i>
-                    </div>
-                  </div>
-                  <div class="open-choice hidden" id="toggleChoice">
-                    <div class="number text-center">
-                      <div class="choice-label">
-                        <label for="passenger">Passengers</label>
-                      </div>
-                      <div class="row justifyBetween alignCenter">
-                        <span class="minus">-</span>
-                        <input type="number" id="passenger" value="2" min="0" />
-                        <span class="plus">+</span>
-                      </div>
-                    </div>
-
-                    <hr />
-                    <div class="checkDiv">
-                      <input type="radio" name="eco" checked id="eco" />
-                      <label for="eco">Ekonom</label>
-                    </div>
-                    <div class="checkDiv">
-                      <input type="radio" name="eco" id="business" />
-                      <label for="business">Business</label>
-                    </div>
-                  </div>
-                </div>
-                <button
-                  type="button"
-                  class="searchBtn"
-                  name=""
-                  value="Search"
-                  id="searchBtn"
-                >Search</button>
-              </div>
-            </form>
+      <div class="content">
+        <div class="fromTo">
+          <span id="destFrom">Baku</span>
+          <i class="fa-solid fa-arrow-right-long"></i>
+          <span id="destTo">Ganja</span>
+        </div>
+        <div class="info">
+          <div class="row">
+            <strong>Flight Time: </strong>
+            <p id="flighttime2"></p>
           </div>
-          <div class="rightSide">
-            <div class="row justifyBetween rowDiv">
-              <div class="">
-                <label for="sort">Sort by:</label>
-                <select name="" id="">
-                  <option value="Popularity">Popularity</option>
-                  <option value="Newest">Newest</option>
-                </select>
-              </div>
+          <div class="row">
+            <strong>Free Baggage: </strong>
+            <p id="freebag"></p>
+          </div>
+          <div class="row">
+            <strong>Handbag:</strong>
+            <p id="handbag"></p>
+          </div>
+          <div class="row open-choice popup-counters">
+            <div class="number text-center">
               <div>
-                <label> View:</label>
-                <a>
-                  <i class="fa-solid fa-list"></i>
-                </a>
-                <a><i class="fa-solid fa-table-cells"></i></a>
+                <label for="adult">Adult</label>
+                <span id="adultprice" class="price">($500)</span>
+              </div>
+
+              <div class="row justifyBetween alignCenter">
+                <span class="minus">-</span>
+                <input type="number" id="adult" value="0" min="0" />
+                <span class="plus">+</span>
               </div>
             </div>
-            <div class="row cards" id="cards">
-              <div class="card">
-                <div class="img">
-                  <img src="images/turkey.jpg" alt="" />
-                </div>
-                <div class="content">
-                  <div class="top">
-                    <h5>Turkey</h5>
-                    <div>
-                      <del>$3000</del>
-                      <span>$2000</span>
-                    </div>
-                  </div>
-                  <p class="cities">
-                    Istanbul, Antalya, Ephesus • <span>8</span> days
-                  </p>
-                </div>
+            <div class="number text-center">
+              <div>
+                <label for="children">Children</label>
+                <span id="childprice" class="price">($500)</span>
               </div>
-              <div class="card">
-                <div class="img">
-                  <img src="images/box-offer-02-370x310.jpg" alt="" />
-                </div>
-                <div class="content">
-                  <div class="top">
-                    <h5>Spain</h5>
-                    <div>
-                      <del>$3000</del>
-                      <span>$2000</span>
-                    </div>
-                  </div>
-                  <p class="cities">
-                    Madrid, Andalucia, Barcelona • <span>9</span> days
-                  </p>
-                </div>
+              <div class="row justifyBetween alignCenter">
+                <span class="minus">-</span>
+                <input type="number" id="children" value="0" min="0"/>
+                <span class="plus">+</span>
               </div>
-              <div class="card">
-                <div class="img">
-                  <img src="images/box-offer-02-370x310.jpg" alt="" />
-                </div>
-                <div class="content">
-                  <div class="top">
-                    <h5>Spain</h5>
-                    <div>
-                      <del>$3000</del>
-                      <span>$2000</span>
-                    </div>
-                  </div>
-                  <p class="cities">
-                    Madrid, Andalucia, Barcelona • <span>9</span> days
-                  </p>
-                </div>
+            </div>
+            <div class="number text-center">
+              <div>
+                <label for="baby">Baby </label>
+                <span id="babyprice" class="price">($500)</span>
               </div>
-              <div class="card">
-                <div class="img">
-                  <img src="images/box-offer-02-370x310.jpg" alt="" />
-                </div>
-                <div class="content">
-                  <div class="top">
-                    <h5>Spain</h5>
-                    <div>
-                      <del>$3000</del>
-                      <span>$2000</span>
-                    </div>
-                  </div>
-                  <p class="cities">
-                    Madrid, Andalucia, Barcelona • <span>9</span> days
-                  </p>
-                </div>
-              </div>
-              <div class="card">
-                <div class="img">
-                  <img src="images/box-offer-02-370x310.jpg" alt="" />
-                </div>
-                <div class="content">
-                  <div class="top">
-                    <h5>Spain</h5>
-                    <div>
-                      <del>$3000</del>
-                      <span>$2000</span>
-                    </div>
-                  </div>
-                  <p class="cities">
-                    Madrid, Andalucia, Barcelona • <span>9</span> days
-                  </p>
-                </div>
+              <div class="row justifyBetween alignCenter">
+                <span class="minus">-</span>
+                <input type="number" id="baby" value="0" min="0" />
+                <span class="plus">+</span>
               </div>
             </div>
           </div>
+          <div class="row">
+            <strong class="total">Total: </strong>
+            <p id="totalprice">$1055</p>
+          </div>
+          <div class="chkout">
+            <a href="#" id="chkout">Checkout</a>
+          </div>
         </div>
-      </section>
-    </main>
-    <script>
-      let menu = document.getElementById("menu");
-      let inputChoice = document.getElementById("inputChoice");
-      let toggleChoice = document.getElementById("toggleChoice");
-      let toggleMenu = document.getElementById("toggleMenu");
-      menu.addEventListener("click", (a) => {
-        console.log(flightTime);
-        toggleMenu.classList.toggle("show");
-      });
-      inputChoice.addEventListener("click", () => {
-        toggleChoice.classList.toggle("show");
-      });
-    </script>
-    <script src="/js/main.js">
-      let minus = document.getElementsByClassName("minus");
-      let plus = document.getElementsByClassName("plus");
-      let decrease = (a) => {
-        let minusInput = a.target.parentElement.children[1];
-        minusInput.value = minusInput.value <= 0 ? 0 : --minusInput.value;
-      };
-      let increase = (a) => {
-        let plusInput = a.target.parentElement.children[1];
-        // minusInput.value--;
-        plusInput.value = plusInput.value <= 0 ? 0 : ++plusInput.value;
-      };
-      for (let i = 0; i < minus.length; i++) {
-        minus[i].addEventListener("click", decrease);
-        plus[i].addEventListener("click", increase);
-      }
-    </script>
-  </body>
+      </div>
+    </div>
+  </div>
+  <main>
+    <div class="tour-banner">
+      <h1>All Tours For You</h1>
+      <p>650 tours found</p>
+    </div>
+    <section class="tour-main">
+      <div class="container row mobile-col" id="tourDiv">
+        <div class="leftSide">
+          <form action="#" class="tour-form">
+            <div class="">
+              <h4>Search</h4>
+              <input type="text" name="" placeholder="from" id="dF" class="dF" />
+              <input type="text" name="" id="dT" placeholder="to" />
+              <input type="text" name="" id="flightPrice" placeholder="price" />
+              <input type="datetime-local" id="flightTime" name="book" />
+              <select name="" id="flightWay">
+                <option value="One way">One Way</option>
+                <option value="Two way">Two Way</option>
+              </select>
+              <div class="choices">
+                <div class="row input-choice justifyBetween alignCenter" id="inputChoice">
+                  <div class="">
+                    <span class="mode">Additional </span>
+                  </div>
+                  <div class="icon-drop">
+                    <i class="fa-solid fa-caret-down"></i>
+                  </div>
+                </div>
+                <div class="open-choice hidden" id="toggleChoice">
+                  <div class="number text-center">
+                    <div class="choice-label">
+                      <label for="passenger">Passengers</label>
+                    </div>
+                    <div class="row justifyBetween alignCenter">
+                      <span class="minus">-</span>
+                      <input type="number" id="passengers" value="2" min="0" />
+                      <span class="plus">+</span>
+                    </div>
+                  </div>
+
+                  <hr />
+                  <div class="checkDiv">
+                    <input type="radio" name="eco" checked id="eco" />
+                    <label for="eco">Ekonom</label>
+                  </div>
+                  <div class="checkDiv">
+                    <input type="radio" name="eco" id="business" />
+                    <label for="business">Business</label>
+                  </div>
+                </div>
+              </div>
+              <button type="button" class="searchBtn" name="" value="Search" id="searchBtn">
+                Search
+              </button>
+            </div>
+          </form>
+        </div>
+        <div class="rightSide">
+          <div class="row justifyBetween rowDiv">
+            <div class="">
+              <label for="sort">Sort by:</label>
+              <select name="" id="">
+                <option value="Popularity">Popularity</option>
+                <option value="Newest">Newest</option>
+              </select>
+            </div>
+            <div>
+              <label> View:</label>
+              <a>
+                <i class="fa-solid fa-list"></i>
+              </a>
+              <a><i class="fa-solid fa-table-cells"></i></a>
+            </div>
+          </div>
+          <div class="row cards" id="cards">
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <script src="js/main.js"></script>
+</body>
+
 </html>

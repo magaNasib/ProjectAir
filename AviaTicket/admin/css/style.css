@@ -184,17 +184,6 @@ header.toursHeader {
   background-color: #f5f5f5;
   position: relative;
 }
-.tour-main .card {
-  transition: 0.4s;
-  cursor: pointer;
-}
-.tour-main .card:hover {
-  border-bottom: 1px solid var(--orange);
-  transform: scale(1.1);
-}
-.tour-main .card .img {
-  height: 70%;
-}
 .leftSide h4 {
   font-size: 1.5rem;
   margin: 1.5rem 0;

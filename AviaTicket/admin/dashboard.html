@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/responsive.css" />
+    <link rel="stylesheet" href="css/admin.css" />
+    <script
+      src="https://kit.fontawesome.com/fa420b4f82.js"
+      crossorigin="anonymous"
+    ></script>
+    <title>Document</title>
+  </head>
+  <body style="background-color: black">
+    <header
+      class="toursHeader"
+      style="color: white; position: relative; z-index: 55; box-shadow: none"
+    >
+      <div class="container h-100">
+        <nav class="row justifyBetween mobile-col">
+          <div class="logo row justifyBetween">
+            <a href="#"> HackTravel </a>
+            <a href="#" class="menu" id="menu"
+              ><i class="fa-solid fa-bars"></i>
+            </a>
+          </div>
+          <div class="navbar row right" id="toggleMenu">
+            <a href="#"
+              ><i class="fa-solid fa-user"></i>
+              Profile
+            </a>
+          </div>
+        </nav>
+      </div>
+    </header>
+    <main>
+      <div class="popup-info more" id="popup" style="display: none">
+        <div class="parent">
+          <a id="clsBtn" class="close"><i class="fa-solid fa-xmark"></i> </a>
+          <div class="img">
+            <img src="images/box-offer-02-370x310.jpg" alt="" />
+          </div>
+          <div class="content">
+            <div class="fromTo">
+              <span id="destFrom">Baku</span>
+              <i class="fa-solid fa-arrow-right-long"></i>
+              <span id="destTo">Ganja</span>
+            </div>
+            <div class="info">
+              <div class="row">
+                <strong>Flight Time: </strong>
+                <p id="flightTime2"></p>
+              </div>
+              <div class="row">
+                <strong>Free Baggage: </strong>
+                <p id="freeBag"></p>
+              </div>
+              <div class="row">
+                <strong>Handbag:</strong>
+                <p id="handbag"></p>
+              </div>
+              <div class="row">
+                <strong class="total">Total: </strong>
+                <p id="totalPrice">$1055</p>
+              </div>
+              <div class="chkout">
+                <a href="#" id="chkout">Checkout</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="popup-info addPopup" id="popup" style="display: none">
+        <div class="parent">
+          <a id="clsBtn" class="close"><i class="fa-solid fa-xmark"></i> </a>
+
+          <div class="content">
+            <div class="info">
+              <div class="row">
+                <input type="text" name="" placeholder="From" id="from" />
+              </div>
+
+              <div class="row">
+                <input type="text" name="" placeholder="To" id="to" />
+              </div>
+
+              <div class="row">
+                <input type="datetime-local" name="" id="time" />
+              </div>
+
+              <div class="row">
+                <input type="url" name="" placeholder="Image url" id="" />
+              </div>
+
+              <div class="row">
+                <input type="text" name="" placeholder="Free Baggage" id="" />
+              </div>
+              <div class="row">
+                <input
+                  type="number"
+                  name=""
+                  placeholder="Ticket count"
+                  id="ticketAmount"
+                />
+              </div>
+
+              <div class="row">
+                <input type="text" name="" placeholder="Hand Bag" id="" />
+              </div>
+              <div class="row">
+                <input
+                  type="text"
+                  name=""
+                  placeholder="Discount with the %"
+                  id=""
+                />
+              </div>
+              <div class="row">
+                <input type="number" placeholder="Price for Adults" />
+              </div>
+              <div class="row">
+                <input type="number" placeholder="Price for Children" />
+              </div>
+              <div class="row">
+                <input type="number" placeholder="Price for Babies" />
+              </div>
+              <div class="row">
+                <input type="radio" name="meal" id="meal" />
+                <label for="">Meal</label>
+
+                <input type="radio" name="meal" id="notmeal" />
+                <label for="notmeal">Not meal</label>
+              </div>
+              <div class="chkout">
+                <a href="#" id="add">Add</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="container">
+        <a href="#" class="addTicket"
+          ><i class="fa-solid fa-plus"></i> Add ticket</a
+        >
+      </div>
+      <table>
+        <thead>
+          <tr>
+            <th>From</th>
+            <th>To</th>
+            <th>Ticket amount</th>
+            <th>Flight Time</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td data-column="from">Baku</td>
+            <td data-column="to">Ganja</td>
+            <td data-column="amount">10</td>
+            <td data-column="time">2022.10.25</td>
+            <td class="actions" style="display: flex;">
+              <a href="#">More...</a>
+              <a href="#">Uptade</a>
+              <a href="#"><i class="fa-solid fa-trash-can"></i></a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </main>
+    <script src="/admin/admin2.js"></script>
+  </body>
+</html>
